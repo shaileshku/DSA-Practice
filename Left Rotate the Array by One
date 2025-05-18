@@ -1,0 +1,23 @@
+import java.lang.Integer;
+class Solution {
+      
+    public static void main (String[] args){
+       int nums [] = {2,23,33,55,10,2,3,100,5,5,5,30,90,23};
+       
+       int temp = nums[0];
+       
+       for(int i =0; i<nums.length-1;i++){
+           nums[i] = nums[i+1];
+       }
+       nums[nums.length-1] = temp;
+       
+       for(int i =0 ; i<nums.length;i++){
+        System.out.print(nums[i]+" ");
+       }
+       
+   
+        
+    }
+
+    
+}
