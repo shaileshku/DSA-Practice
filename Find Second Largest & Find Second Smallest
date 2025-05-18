@@ -1,0 +1,47 @@
+import java.lang.Integer;
+class Solution {
+      
+    public static void main (String[] args){
+       int nums [] = {10,2,3,100,5,5,5};
+       int largest = nums[0];
+       int smallest = nums[0];
+      int sSecondLargest = findSecondLargestElement(nums,largest);
+      
+      int sSecondSmallest = findSecondSmallest(nums,smallest);
+       System.out.print(" Second Largest "+ sSecondLargest+" Second Smallest "+sSecondSmallest);
+        
+    }
+    
+    public static int findSecondSmallest(int [] nums ,int smallest){
+        int sSecondSmallest = Integer.MAX_VALUE;
+        for(int i = 0; i<nums.length;i++){
+            if(nums[i]<smallest){
+                sSecondSmallest = smallest;
+                smallest = nums[i];
+            }
+            
+            if(nums[i]!=smallest && nums[i]<sSecondSmallest){
+                sSecondSmallest = nums[i];
+            }
+        }
+        
+        return sSecondSmallest;
+    }
+    
+    public static int findSecondLargestElement(int[] nums , int largest){
+          int sSecondLargest = Integer.MIN_VALUE;
+        for(int i = 0; i<nums.length;i++){
+            if(nums[i]>largest){
+                sSecondLargest = largest;
+                largest = nums[i];
+            }
+            
+            if(nums[i] < largest && nums[i]> sSecondLargest){
+                 sSecondLargest = nums[i];
+            }
+            
+        }
+        return sSecondLargest;
+    }
+    
+}
